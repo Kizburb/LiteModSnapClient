@@ -5,12 +5,14 @@ import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.init.Items;
 import net.minecraft.util.ResourceLocation;
 import nl.kingcrafting.snapclient.events.EventRender2d;
 import nl.kingcrafting.snapclient.manager.ModManager;
 import nl.kingcrafting.snapclient.mod.BaseMod;
+import org.lwjgl.opengl.GL11;
 
 import java.util.Random;
 
@@ -43,9 +45,8 @@ public class HUD {
 
         ScaledResolution sr = e.getSr();
 
-
-
         e.getFr().drawString("SnapClient V2!" , 8 , 6 ,0x0C05E8 );
+
         renderMods(e);
 
     }

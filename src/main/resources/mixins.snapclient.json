@@ -6,7 +6,8 @@
     "mixins": [
         "MixinMinecraft",
         "MixinEntityPlayerSP",
-        "MixinGuiIngame"
+        "MixinGuiIngame",
+        "MixinNetworkManager"
     ],
     "injectors": {
         "defaultRequire": 1

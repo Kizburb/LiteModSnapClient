@@ -6,9 +6,12 @@ import com.mumfrey.liteloader.Tickable;
 import com.mumfrey.liteloader.modconfig.ConfigStrategy;
 import com.mumfrey.liteloader.modconfig.ExposableOptions;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.DamageSource;
+import nl.kingcrafting.snapclient.events.EventPlayerDamage;
 import nl.kingcrafting.snapclient.events.EventTick;
 import nl.kingcrafting.snapclient.gui.HUD;
 import nl.kingcrafting.snapclient.manager.ModManager;
+import nl.kingcrafting.snapclient.utils.SnapConfig;
 
 import java.io.File;
 
@@ -28,6 +31,8 @@ public class LiteModSnapClient implements Tickable {
 
     }
 
+
+
     @Override
     public String getVersion() {
         return "2.0";
@@ -38,6 +43,16 @@ public class LiteModSnapClient implements Tickable {
 
         ModManager.getInstance().initModManager();
         HUD.getInstance().initHud();
+
+
+        Runtime.getRuntime().addShutdownHook(new Thread(){
+            @Override
+            public void run() {
+
+                SnapConfig.getInstance().init();
+
+            }
+        });
 
     }
 

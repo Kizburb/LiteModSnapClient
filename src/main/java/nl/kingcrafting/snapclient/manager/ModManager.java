@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by Jasper on 16-5-2017.
  */
 public class ModManager {
-    
+
     private static ModManager instance = new ModManager();
     public static ModManager getInstance(){
         return instance;
@@ -33,7 +33,7 @@ public class ModManager {
     }
 
     private void addMods() {
-    ModManager.instance.mods.add(new ModStep());
+    ModManager.getInstance().mods.add(new ModStep());
     ModManager.getInstance().mods.add(new ModFlight());
     ModManager.getInstance().mods.add(new ModNoFall());
     ModManager.getInstance().mods.add(new ModMeme());
@@ -52,7 +52,6 @@ public class ModManager {
                 mod.toggleModule();
             }
         }
-
 
     }
 
