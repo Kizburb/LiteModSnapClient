@@ -34,6 +34,7 @@ public class ModNoFall extends BaseMod {
     public void onLivingUpdate(EventLivingUpdate e) {
         if (getState()) {
             if (mc.player.fallDistance > 2f) {
+
                 mc.player.connection.sendPacket(new CPacketPlayer(true));
             }
         }

@@ -22,7 +22,7 @@ public class ModStep extends BaseMod {
 
     @Override
     public void onEnable() {
-        System.out.println("**ONENABLE**");
+
     EventManager.register(this);
     }
     @EventTarget
@@ -33,7 +33,7 @@ public class ModStep extends BaseMod {
 
     @Override
     public void onDisable() {
-        System.out.println("**ONDISABLE**");
+
         EventManager.unregister(this);
         Minecraft.getMinecraft().player.stepHeight = 0.6f;
     }

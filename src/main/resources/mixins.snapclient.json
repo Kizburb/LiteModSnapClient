@@ -7,7 +7,9 @@
         "MixinMinecraft",
         "MixinEntityPlayerSP",
         "MixinGuiIngame",
-        "MixinNetworkManager"
+        "MixinNetworkManager",
+        "MixinEntityPlayer",
+        "MixinEntityPlayer"
     ],
     "injectors": {
         "defaultRequire": 1

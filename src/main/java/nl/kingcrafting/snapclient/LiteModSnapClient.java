@@ -1,6 +1,8 @@
 package nl.kingcrafting.snapclient;
 
+import com.capesapi.CapesAPI;
 import com.darkmagician6.eventapi.EventManager;
+import com.mojang.authlib.GameProfile;
 import com.mumfrey.liteloader.Tickable;
 import com.mumfrey.liteloader.modconfig.ConfigStrategy;
 import com.mumfrey.liteloader.modconfig.ExposableOptions;
@@ -38,16 +40,6 @@ public class LiteModSnapClient implements Tickable {
 
         ModManager.getInstance().initModManager();
         HUD.getInstance().initHud();
-
-
-        Runtime.getRuntime().addShutdownHook(new Thread(){
-            @Override
-            public void run() {
-
-
-
-            }
-        });
 
     }
 

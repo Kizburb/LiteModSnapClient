@@ -12,7 +12,7 @@ import org.lwjgl.input.Keyboard;
 public class ModMeme extends BaseMod {
 
 
-
+        //TODO: SnapClient This mod its just a PlaceHolder for a Meme mode in the HUD.
     public ModMeme() {
         super("Meme", "Meme", Category.GUI, KeyBindMaker.makeBind("meme" , Keyboard.KEY_NUMPAD0));
     }
