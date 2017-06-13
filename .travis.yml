@@ -30,7 +30,7 @@ install:
 # Build the Project.
 script:
   - ./gradlew build -S
-  - sonar-scanner -Dsonar.login=$sonarqubekey
+  - ./gradlew -Dsonar.host.url=https://sonarcloud.io -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonarqubekey
 
 # Clean up after Gradle
 env:
