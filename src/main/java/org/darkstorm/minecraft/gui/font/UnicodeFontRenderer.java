@@ -35,6 +35,7 @@ public class UnicodeFontRenderer extends FontRenderer {
 	public int drawString(String string, int x, int y, int color) {
 		if(string == null)
 			return 0;
+
 		// glClear(256);
 		// glMatrixMode(GL_PROJECTION);
 		// glLoadIdentity();
@@ -44,6 +45,7 @@ public class UnicodeFontRenderer extends FontRenderer {
 		// glMatrixMode(GL_MODELVIEW);
 		// glLoadIdentity();
 		// glTranslatef(0, 0, -2000);
+
 		glPushMatrix();
 		glScaled(0.5, 0.5, 0.5);
 
