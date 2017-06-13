@@ -17,7 +17,8 @@ import java.io.File;
 public class LiteModSnapClient implements Tickable {
 
 
-    public LiteModSnapClient(){
+
+        public LiteModSnapClient(){
         EventManager.register(this);
     }
 
@@ -25,7 +26,7 @@ public class LiteModSnapClient implements Tickable {
 
     @Override
     public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock) {
-
+        //This method its needed for LiteLoader
     }
 
 
@@ -45,7 +46,7 @@ public class LiteModSnapClient implements Tickable {
 
     @Override
     public void upgradeSettings(String version, File configPath, File oldConfigPath) {
-
+        //This method its needed for LiteLoader
     }
 
     @Override
