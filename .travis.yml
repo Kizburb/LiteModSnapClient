@@ -11,6 +11,10 @@ addons:
       secure: '$sonarqubekey'
 
 #So only the 1.11.2 branch
+
+jdk:
+  - oraclejdk8
+  
 branches:
   only:
     - 1.11.2
