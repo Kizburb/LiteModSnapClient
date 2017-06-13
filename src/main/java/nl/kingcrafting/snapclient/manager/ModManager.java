@@ -6,10 +6,7 @@ import com.mumfrey.liteloader.core.LiteLoader;
 import net.minecraft.client.settings.KeyBinding;
 import nl.kingcrafting.snapclient.events.EventTick;
 import nl.kingcrafting.snapclient.mod.BaseMod;
-import nl.kingcrafting.snapclient.mod.mods.ModFlight;
-import nl.kingcrafting.snapclient.mod.mods.ModMeme;
-import nl.kingcrafting.snapclient.mod.mods.ModNoFall;
-import nl.kingcrafting.snapclient.mod.mods.ModStep;
+import nl.kingcrafting.snapclient.mod.mods.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +40,7 @@ public class ModManager {
     ModManager.getInstance().mods.add(new ModFlight());
     ModManager.getInstance().mods.add(new ModNoFall());
     ModManager.getInstance().mods.add(new ModMeme());
+    ModManager.getInstance().mods.add(new ModKillAura());
     }
     private void registerBinds(){
 

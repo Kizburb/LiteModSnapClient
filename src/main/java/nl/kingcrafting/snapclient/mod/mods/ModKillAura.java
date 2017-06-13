@@ -3,8 +3,11 @@ package nl.kingcrafting.snapclient.mod.mods;
 import com.darkmagician6.eventapi.EventManager;
 import com.darkmagician6.eventapi.EventTarget;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumHand;
 import nl.kingcrafting.snapclient.events.EventLivingUpdate;
 import nl.kingcrafting.snapclient.mod.BaseMod;
 import nl.kingcrafting.snapclient.mod.Category;
@@ -23,7 +26,7 @@ public class ModKillAura extends BaseMod {
     private Minecraft mc = Minecraft.getMinecraft();
 
 
-    public ModKillAura(String name, String desc, Category category, KeyBinding bind) {
+    public ModKillAura() {
         super("KillAura", "REKT The N00BS", Category.COMBAT, KeyBindMaker.makeBind("KillAura" , Keyboard.KEY_K));
     }
 
@@ -40,19 +43,30 @@ public class ModKillAura extends BaseMod {
     @EventTarget
     public void onLivingUpdate(EventLivingUpdate e){
 
-    if(timer.hasTimePassed((long) 690)){
-
+        if (timer.hasTimePassed((long) (690))){
             timer.reset();
+            for (Iterator<Entity> entities = mc.world.loadedEntityList.iterator(); entities.hasNext(); ) {
+                Object theObject = entities.next();
+                if (theObject instanceof EntityLivingBase) {
+                    EntityLivingBase entity = (EntityLivingBase) theObject;
 
-        for(Iterator<Entity> entitys = mc.world.loadedEntityList.iterator(); entitys.hasNext(); ){
+                    if (entity instanceof EntityPlayerSP) continue;
 
-            while (entitys.hasNext()){
+                    if (mc.player.getDistanceToEntity(entity) <= 6.2173613F) {
+                        if (entity.isEntityAlive()) {
+                            mc.playerController.attackEntity(mc.player, entity);
+                            mc.playerController.
+
+                           mc.player.swingArm(EnumHand.MAIN_HAND);
+
+                            continue;
+                        }
+                    }
+                }
 
             }
-
         }
 
-    }
 
     }
 }
