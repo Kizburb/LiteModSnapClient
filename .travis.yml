@@ -4,13 +4,12 @@ language: java
 # Tell Travis we want container-based builds.
 sudo: false
 
-addons:
-  sonarqube:
-    organization: "kingcraftingnl-github"
-    token:
-      secure: '$sonarqubekey'
 
 #So only the 1.11.2 branch
+
+jdk:
+  - oraclejdk8
+
 branches:
   only:
     - 1.11.2
@@ -26,7 +25,7 @@ install:
 # Build the Project.
 script:
   - ./gradlew build -S
-  - ./gradlew sonarqube
+  - ./gradlew sonarqube -Dsonar.host.url=https://sonarcloud.io  -Dsonar.organization=kingcraftingnl-github -Dsonar.login=$sonarqubekey
 
 # Clean up after Gradle
 env:
@@ -43,4 +42,3 @@ cache:
     - $HOME/.gradle/caches
     # So gradle isn't downloaded every time.
     - $HOME/.gradle/wrapper
-    - $HOME/.sonar/cache'
