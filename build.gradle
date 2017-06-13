@@ -1,4 +1,7 @@
 buildscript {
+
+
+
     repositories {
         mavenLocal()
         mavenCentral()
@@ -20,9 +23,17 @@ buildscript {
         classpath 'org.spongepowered:mixingradle:0.4-SNAPSHOT'
     }
 }
+plugins{
+    id "org.sonarqube" version "2.2"
 
+}
+
+
+apply plugin: "org.sonarqube"
 apply plugin: 'net.minecraftforge.gradle.liteloader'
 apply plugin: 'org.spongepowered.mixin'
+
+
 
 version = "0.1"
 group = "nl.kingcrafting" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -56,3 +67,4 @@ litemod {
 jar {
     from litemod.outputs
 }
+
