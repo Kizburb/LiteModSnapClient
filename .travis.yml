@@ -4,7 +4,7 @@ language: java
 # Tell Travis we want container-based builds.
 sudo: false
 
-#So only the 1.7.10 branch
+#So only the 1.11.2 branch
 branches:
   only:
     - 1.11.2
