@@ -1,5 +1,4 @@
 package nl.kingcrafting.snapclient.mixin;
-import  com.capesapi.CapesAPI;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.network.NetworkPlayerInfo;
@@ -20,34 +19,8 @@ import javax.annotation.Nullable;
 @Mixin(AbstractClientPlayer.class)
 public abstract class MixinAbstractClientPlayer extends MixinEntityPlayer{
 
-    @Shadow
-    @Nullable
-    protected abstract NetworkPlayerInfo getPlayerInfo();
-
-    /**
-     * @author Hexeption
-     */
-    @Inject(method = "<init>", at = @At(value = "RETURN"))
-    public void IAbstractClientPlayer(World worldIn, GameProfile playerProfile, CallbackInfo callbackInfo) {
-        com.capesapi.CapesAPI.loadCape(getGameProfile().getId());
-    }
 
 
-    /**
-     * @author Hexeption
-     */
-    @Overwrite
-    @Nullable
-    public ResourceLocation getLocationCape() {
-
-        if (com.capesapi.CapesAPI.hasCape(getGameProfile().getId())) {
-            return CapesAPI.getCape(getGameProfile().getId());
-        } else {
-            NetworkPlayerInfo networkplayerinfo = this.getPlayerInfo();
-            return networkplayerinfo == null ? null : networkplayerinfo.getLocationCape();
-        }
-
-    }
 
 
 }

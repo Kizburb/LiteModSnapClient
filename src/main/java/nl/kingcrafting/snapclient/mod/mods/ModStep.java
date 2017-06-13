@@ -17,7 +17,7 @@ public class ModStep extends BaseMod {
 
 
     public ModStep() {
-        super("Step", "Step", Category.MOVEMENT, KeyBindMaker.makeBind("Step" , Keyboard.KEY_F));
+        super("Step", "Step", Category.MOVEMENT, KeyBindMaker.makeBind("Step" , Keyboard.KEY_P));
     }
 
     @Override

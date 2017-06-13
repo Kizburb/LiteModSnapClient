@@ -1,6 +1,6 @@
 package nl.kingcrafting.snapclient;
 
-import com.capesapi.CapesAPI;
+
 import com.darkmagician6.eventapi.EventManager;
 import com.mojang.authlib.GameProfile;
 import com.mumfrey.liteloader.Tickable;

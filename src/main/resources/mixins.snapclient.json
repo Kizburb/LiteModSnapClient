@@ -1,6 +1,7 @@
 {
     "required": true,
     "minVersion": "0.5.3",
+    "compatibilityLevel" : "JAVA_8",
     "package": "nl.kingcrafting.snapclient.mixin",
     "refmap": "mixins.snapclient.refmap.json",
     "mixins": [
