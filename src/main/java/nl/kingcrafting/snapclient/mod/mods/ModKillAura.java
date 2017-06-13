@@ -55,9 +55,10 @@ public class ModKillAura extends BaseMod {
                     if (mc.player.getDistanceToEntity(entity) <= 6.2173613F) {
                         if (entity.isEntityAlive()) {
                             mc.playerController.attackEntity(mc.player, entity);
-                            mc.playerController.
 
-                           mc.player.swingArm(EnumHand.MAIN_HAND);
+                            
+
+                            mc.player.swingArm(EnumHand.MAIN_HAND);
 
                             continue;
                         }
