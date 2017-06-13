@@ -14,7 +14,7 @@ addons:
 
 jdk:
   - oraclejdk8
-  
+
 branches:
   only:
     - 1.11.2
@@ -30,7 +30,7 @@ install:
 # Build the Project.
 script:
   - ./gradlew build -S
-  - ./gradlew sonarqube
+  - sonar-scanner -Dsonar.login=$sonarqubekey
 
 # Clean up after Gradle
 env:
