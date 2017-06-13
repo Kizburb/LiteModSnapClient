@@ -27,6 +27,7 @@ public final class EventAPI {
 	 * No need to create an Object of this class as all Methods are static.
 	 */
 	private EventAPI() {
+
 	}
 
     /**

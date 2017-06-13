@@ -12,9 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import nl.kingcrafting.snapclient.events.EventRender2d;
 import nl.kingcrafting.snapclient.manager.ModManager;
 import nl.kingcrafting.snapclient.mod.BaseMod;
-import org.lwjgl.opengl.GL11;
 
-import java.util.Random;
 
 /**
  * Created by Jasper on 16-5-2017.
@@ -44,7 +42,6 @@ public class HUD {
 
 
         ScaledResolution sr = e.getSr();
-
         e.getFr().drawString("SnapClient V2!" , 8 , 6 ,0x0C05E8 );
 
         renderMods(e);
@@ -53,6 +50,9 @@ public class HUD {
 
     private void renderMeme(EventRender2d e) {
         ScaledResolution sr = e.getSr();
+
+
+
 
         mc.getTextureManager().bindTexture(new ResourceLocation("textures/blocks/tnt_side.png"));
         Gui.drawScaledCustomSizeModalRect(6, sr.getScaledHeight() - 56,
@@ -75,5 +75,6 @@ public class HUD {
 
 
     }
+
 
 }

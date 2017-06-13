@@ -13,7 +13,7 @@ public class KeyBindMaker {
         KeyBinding bind = new KeyBinding(name , key , "SnapClient");
 
         EventManager.call(new EventKeyBindMake(key , name , bind));
-        
+
         return bind;
     }
 

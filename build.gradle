@@ -33,7 +33,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 
 
-version = "0.1"
+version = "1.1"
 group = "nl.kingcrafting" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "SnapClient"
 
