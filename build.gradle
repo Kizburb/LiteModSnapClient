@@ -25,7 +25,6 @@ buildscript {
 }
 
 
-apply plugin: "org.sonarqube"
 apply plugin: 'net.minecraftforge.gradle.liteloader'
 apply plugin: 'org.spongepowered.mixin'
 
