@@ -2,6 +2,7 @@ package nl.kingcrafting.snapclient.gui;
 
 import com.darkmagician6.eventapi.EventManager;
 import com.darkmagician6.eventapi.EventTarget;
+import com.sun.javafx.util.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -35,6 +36,7 @@ public class HUD {
 
     @EventTarget
     public void onRenderHud(EventRender2d e){
+        int color = getColor((System.currentTimeMillis() / 20) % 360);
         meme = ModManager.getInstance().getStateOfMod("Meme");
 
         if(meme){
@@ -42,7 +44,7 @@ public class HUD {
         }
 
         ScaledResolution sr = e.getSr();
-        e.getFr().drawString("SnapClient V2!" , 8 , 6 ,0x0C05E8 );
+        e.getFr().drawString("SnapClient V2" , 8 , 6 ,0x0C05E8 );
 
         renderMods(e);
 
@@ -61,12 +63,12 @@ public class HUD {
     private void renderMods(EventRender2d e) {
         int right = e.getSr().getScaledWidth() - 2;
         int y = 12;
-
+        int color = getColor((System.currentTimeMillis() / 20) % 360);
         for(BaseMod mod : ModManager.getInstance().mods){
             if(mod.getState()){
 
                 TTFManager.getInstance().getModListFont().drawString(mod.getName(),
-                        right - TTFManager.getInstance().getModListFont().getWidth(mod.getName()), y, 0x156806
+                        right - TTFManager.getInstance().getModListFont().getWidth(mod.getName()), y, color
                 );
 
 
@@ -75,21 +77,10 @@ public class HUD {
         }
     }
 
-    public int genColor(){
-        Random randomColor = new Random();
-        int toReturn = 0x1D9310;
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("0x");
-
-        while(sb.length() < 10){
-            sb.append(Integer.toHexString(randomColor.nextInt()));
-        }
-
-        sb.setLength(8);
-        toReturn = Integer.decode(sb.toString()).intValue();
-
-        return toReturn;
+    private int getColor(double hue)
+    {
+        double[] c = Utils.HSBtoRGB(hue, 1, 1);
+        return (0xFF << 24) | ((int)(c[0] * 255) << 16) | ((int)(c[1] * 255) << 8) | (((int)c[2] * 255));
     }
 
 }
