@@ -21,8 +21,6 @@ branches:
 before_install:
   - chmod +x gradlew
 
-
-
 # Prepare the workspace.
 install:
   - ./gradlew setupCIWorkspace -S
