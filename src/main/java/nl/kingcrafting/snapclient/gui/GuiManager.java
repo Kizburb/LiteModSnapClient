@@ -1,11 +1,6 @@
 package nl.kingcrafting.snapclient.gui;
 
-import java.awt.Dimension;
-import java.awt.Rectangle;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
-
+import net.minecraft.client.Minecraft;
 import nl.kingcrafting.snapclient.manager.ModManager;
 import nl.kingcrafting.snapclient.mod.BaseMod;
 import nl.kingcrafting.snapclient.mod.Category;
@@ -14,34 +9,23 @@ import org.darkstorm.minecraft.gui.component.Button;
 import org.darkstorm.minecraft.gui.component.ComboBox;
 import org.darkstorm.minecraft.gui.component.Component;
 import org.darkstorm.minecraft.gui.component.Frame;
-import org.darkstorm.minecraft.gui.component.Slider;
 import org.darkstorm.minecraft.gui.component.basic.BasicButton;
 import org.darkstorm.minecraft.gui.component.basic.BasicComboBox;
 import org.darkstorm.minecraft.gui.component.basic.BasicFrame;
-import org.darkstorm.minecraft.gui.component.basic.BasicSlider;
 import org.darkstorm.minecraft.gui.layout.GridLayoutManager;
 import org.darkstorm.minecraft.gui.layout.GridLayoutManager.HorizontalGridConstraint;
 import org.darkstorm.minecraft.gui.listener.ButtonListener;
 import org.darkstorm.minecraft.gui.listener.ComboBoxListener;
-import org.darkstorm.minecraft.gui.listener.SliderListener;
 import org.darkstorm.minecraft.gui.theme.Theme;
 import org.darkstorm.minecraft.gui.theme.simple.SimpleTheme;
 
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 
-import net.minecraft.client.Minecraft;
-
-
-/**
- * Minecraft GUI API
- *
- * This class is not actually intended for use; rather, you should use this as a
- * template for your actual GuiManager, as the creation of frames is highly
- * implementation-specific.
- *
- * @author DarkStorm (darkstorm@evilminecraft.net)
- */
 public final class GuiManager extends AbstractGuiManager {
 
     private class ModuleFrame extends BasicFrame {
@@ -161,7 +145,7 @@ public final class GuiManager extends AbstractGuiManager {
         Dimension defaultDimension = theme.getUIForComponent(testFrame).getDefaultSize(testFrame);
         testFrame.setWidth(defaultDimension.width);
         testFrame.setHeight(defaultDimension.height);
-        testFrame.setVisible(true);
+        testFrame.setVisible(false);
         testFrame.setClosable(false);
         testFrame.setMinimized(true);
         addFrame(testFrame);
