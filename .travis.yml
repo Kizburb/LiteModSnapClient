@@ -9,6 +9,9 @@ addons:
     packages:
       - oracle-java8-installer
 
+jdk:
+  - oraclejdk8
+
 #So only the 1.11.2 branch
 branches:
   only:
