@@ -5,19 +5,23 @@ language: java
 sudo: false
 
 
+
 #So only the 1.11.2 branch
-
-jdk:
-  - oraclejdk8
-  - openjdk8
-
 branches:
   only:
     - 1.11.2
 
 # Use the gradle wrapper for 2.7 instead of default 2.2
-before_install:
-  - chmod +x gradlew
+
+  before_install:
+      - chmod +x gradlew
+      - rm -rf ~/.linuxbrew
+      - yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+      - export PATH="$HOME/.linuxbrew/bin:$PATH"
+      - export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+      - export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+      - brew install jdk
+
 
 # Prepare the workspace.
 install:
