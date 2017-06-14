@@ -17,7 +17,6 @@ public class PacketManager {
 
            netHandlerPlayClient.sendPacket(packetToSend);
 
-
     }
 
 }

@@ -10,15 +10,12 @@ import net.minecraft.util.DamageSource;
  */
 public class EventPlayerDamage implements Event {
 
-
     private DamageSource damageSource;
     private float amount;
-
 
     public EventPlayerDamage(DamageSource s , Float f) {
         this.damageSource = s;
         this.amount = f;
-
 
     }
 
@@ -29,6 +26,5 @@ public class EventPlayerDamage implements Event {
     public float getAmount() {
         return amount;
     }
-
 
 }

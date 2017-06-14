@@ -15,5 +15,5 @@ public abstract class MixinEntityPlayer {
     @Shadow
     public abstract GameProfile getGameProfile();
 
-
+    //TODO: CapesAPI
 }

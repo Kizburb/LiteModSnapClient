@@ -13,7 +13,6 @@ public class EventGameStart implements Event {
     public EventGameStart(Minecraft minecraft) {
         this.mc = minecraft;
 
-
     }
 
     public Minecraft getMc() {

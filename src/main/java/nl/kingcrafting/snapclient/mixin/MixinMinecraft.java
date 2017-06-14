@@ -27,15 +27,10 @@ public abstract class MixinMinecraft {
         EventManager.call(new EventGameStart(theMinecraft));
     }
 
-
-
     @Inject(method = "loadWorld(Lnet/minecraft/client/multiplayer/WorldClient;Ljava/lang/String;)V", at = @At("HEAD"))
     public void loadWorld(@Nullable WorldClient worldClientIn, String loadingMessage, CallbackInfo callback) {
 
-
-
-
-
+        //TODO: WorldLoadEvent
     }
 
 

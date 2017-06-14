@@ -24,16 +24,12 @@ public class ModFlight extends BaseMod {
     @Override
     public void onEnable() {
         EventManager.register(this);
-
-
-
     }
 
     @Override
     public void onDisable() {
     EventManager.unregister(this);
         mc.player.capabilities.isFlying = false;
-
     }
     @EventTarget
     public void onLivingUpdate(EventLivingUpdate e){
@@ -50,15 +46,6 @@ public class ModFlight extends BaseMod {
             if(mc.player.fallDistance >2f){
                 mc.player.connection.sendPacket(new CPacketPlayer(true));
             }
-
         }
-
-
-
-
-
-
-
-    }
-
+  }
 }

@@ -27,9 +27,6 @@ public abstract class MixinEntityPlayerSP  {
         EventManager.call(event);
     }
 
-
-
-
     @Inject(method = "onLivingUpdate()V" , at = @At("HEAD"))
     public void onLivingUpdate(CallbackInfo callback){
         EventManager.call(new EventLivingUpdate());
@@ -39,7 +36,5 @@ public abstract class MixinEntityPlayerSP  {
     public void onUpdate(CallbackInfo callback){
         EventManager.call(new EventTick());
     }
-
-
 
 }

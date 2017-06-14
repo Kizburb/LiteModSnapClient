@@ -20,7 +20,4 @@ public class MixinNetworkManager {
     public void MixinSendPacket(Packet<?> packet , CallbackInfo callback){
         EventManager.call(new EventPacketSend(packet));
     }
-
-
-
 }

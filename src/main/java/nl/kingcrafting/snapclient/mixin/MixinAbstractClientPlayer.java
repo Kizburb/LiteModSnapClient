@@ -19,8 +19,5 @@ import javax.annotation.Nullable;
 @Mixin(AbstractClientPlayer.class)
 public abstract class MixinAbstractClientPlayer extends MixinEntityPlayer{
 
-
-
-
-
+    //TODO Wrap networking
 }

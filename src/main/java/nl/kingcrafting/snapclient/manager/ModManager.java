@@ -26,8 +26,6 @@ public class ModManager {
 
     public HashMap<BaseMod , KeyBinding> binds = new HashMap<BaseMod, KeyBinding>();
 
-
-
     public void initModManager(){
         EventManager.register(this);
 
@@ -42,6 +40,7 @@ public class ModManager {
     ModManager.getInstance().mods.add(new ModMeme());
     ModManager.getInstance().mods.add(new ModKillAura());
     ModManager.getInstance().mods.add(new ModGui());
+    ModManager.getInstance().mods.add(new ModAirJump());
     }
     private void registerBinds(){
 
@@ -76,16 +75,14 @@ public class ModManager {
         return state;
     }
 
-    public BaseMod getMod(String name) throws Exception{
+    public BaseMod getMod(String name) throws Exception {
         BaseMod m = null;
-        for(BaseMod mod : ModManager.getInstance().mods){
-            if(mod.getName().equals(name)){
+        for (BaseMod mod : ModManager.getInstance().mods) {
+            if (mod.getName().equals(name)) {
                 m = mod;
             }
         }
 
         return m;
     }
-
-
 }

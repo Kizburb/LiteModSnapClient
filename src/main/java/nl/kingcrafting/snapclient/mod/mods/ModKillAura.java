@@ -56,7 +56,6 @@ public class ModKillAura extends BaseMod {
                         if (entity.isEntityAlive()) {
                             mc.playerController.attackEntity(mc.player, entity);
 
-
                             mc.player.swingArm(EnumHand.MAIN_HAND);
 
                             continue;
@@ -66,7 +65,5 @@ public class ModKillAura extends BaseMod {
 
             }
         }
-
-
     }
 }
