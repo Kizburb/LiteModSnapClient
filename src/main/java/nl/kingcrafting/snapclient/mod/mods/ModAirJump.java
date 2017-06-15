@@ -36,5 +36,4 @@ public class ModAirJump extends BaseMod {
             }
         }
     }
-
 }

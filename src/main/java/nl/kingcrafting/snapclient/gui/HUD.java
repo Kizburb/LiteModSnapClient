@@ -17,8 +17,6 @@ import nl.kingcrafting.snapclient.manager.ModManager;
 import nl.kingcrafting.snapclient.mod.BaseMod;
 import nl.kingcrafting.snapclient.ttf.TTFManager;
 
-import java.util.Random;
-
 
 /**
  * Created by Jasper on 16-5-2017.

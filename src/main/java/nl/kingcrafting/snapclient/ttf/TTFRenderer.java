@@ -81,6 +81,7 @@ public class TTFRenderer {
         boolean texture = GL11.glIsEnabled(GL11.GL_TEXTURE_2D);
         if(!blend)
             glEnable(GL11.GL_BLEND);
+
         if(lighting)
             glDisable(GL11.GL_LIGHTING);
         if(texture)
