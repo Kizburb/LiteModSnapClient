@@ -43,9 +43,6 @@ public class ModFlight extends BaseMod {
                 }
 
             }
-            if(mc.player.fallDistance >2f){
-                mc.player.connection.sendPacket(new CPacketPlayer(true));
-            }
         }
   }
 }
