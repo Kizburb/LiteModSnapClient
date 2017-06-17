@@ -16,6 +16,7 @@ import nl.kingcrafting.snapclient.events.EventRender2d;
 import nl.kingcrafting.snapclient.manager.ModManager;
 import nl.kingcrafting.snapclient.mod.BaseMod;
 import nl.kingcrafting.snapclient.ttf.TTFManager;
+import nl.kingcrafting.snapclient.utils.ColorUtils;
 
 
 /**
@@ -84,16 +85,19 @@ public class HUD {
 
     private void renderMods(EventRender2d e) {
         int right = e.getSr().getScaledWidth() - 2;
-        int y = 12;
+        int y = 0;
+        int index = 0;
+        int x = 0;
         int color = getColor((System.currentTimeMillis() / 20) % 360);
         for(BaseMod mod : ModManager.getInstance().mods){
             if(mod.getState()){
 
                 TTFManager.getInstance().getModListFont().drawString(mod.getName(),
-                        right - TTFManager.getInstance().getModListFont().getWidth(mod.getName()), y, color
-                );
+                        right - TTFManager.getInstance().getModListFont().getWidth(mod.getName()), y, ColorUtils.rainbow(index + x * 200000000L, 1.0F).getRGB());
 
                 y = y+12;
+                x++;
+                index++;
             }
         }
     }

@@ -41,6 +41,7 @@ public class ModManager {
     ModManager.getInstance().mods.add(new ModKillAura());
     ModManager.getInstance().mods.add(new ModGui());
     ModManager.getInstance().mods.add(new ModAirJump());
+    ModManager.getInstance().mods.add(new ModSprint());
     }
     private void registerBinds(){
 
